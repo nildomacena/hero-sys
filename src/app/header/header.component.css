@@ -1,0 +1,10 @@
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+  }
+  mat-toolbar{
+    width: 110%;  
+    margin-top: -10px;
+      margin-left: -10px;
+      margin-right: -10px;
+
+  }

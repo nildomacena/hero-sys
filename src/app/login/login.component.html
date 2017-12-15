@@ -1,3 +1,11 @@
-<p>
-  login works!
-</p>
+<div style="text-align:center">
+    <img width="200" src="/assets/images/icon.png"><br>
+    <mat-form-field style="width:30%" class="example-full-width">
+      <input matInput placeholder="Email" [(ngModel)]="email" >
+    </mat-form-field><br>
+    <mat-form-field style="width:30%" class="example-full-width">
+      <input matInput placeholder="Senha" type="password" [(ngModel)]="senha" >
+    </mat-form-field><br>
+    <button style="width:30%" mat-raised-button color="primary" [disabled]="email.length < 5 || senha.length < 5" (click)="login()">Entrar</button><br>
+    <button style="width:30%; margin-top:10px;" mat-button color="primary" (click)="esqueciSenha()" >Esqueci a senha</button><br>
+  </div>

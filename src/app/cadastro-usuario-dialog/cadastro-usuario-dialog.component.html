@@ -1,0 +1,25 @@
+<h2 style="text-align:center; margin-top:0">Cadastrar usuário</h2>
+<mat-grid-list cols="2" rowHeight="80px" *ngIf="!carregando">
+  <mat-grid-tile colspan="2">
+    <mat-form-field style="width:100%" class="example-full-width">
+      <input matInput [(ngModel)]="email" placeholder="Usuário">
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2">
+    <mat-form-field style="width:100%" class="example-full-width">
+      <input matInput [(ngModel)]="senha" placeholder="Digite a senha" type="password">
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2">
+    <mat-form-field style="width:100%" class="example-full-width">
+      <input matInput [(ngModel)]="confirmaSenha" placeholder="Repita a senha" type="password">
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button style="width:80%" (click)="cancelar()" mat-raised-button color="warn">Cancelar</button><br>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button style="width:80%" mat-raised-button color="primary" (click)="salvar()" [disabled]="(senha != confirmaSenha) || senha.length < 5 " >Salvar</button><br>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-spinner *ngIf="carregando" style="top:-230px; left:40%"></mat-spinner>
