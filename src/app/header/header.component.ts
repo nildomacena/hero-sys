@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { FireService } from './../fire.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public fire: FireService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
+
+  }
+
+  logout(){
+    this.fire.logout()
+      .then(_ => {
+        this.router.navigate(['login'])
+      })
   }
 
 }

@@ -25,6 +25,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent} from './home/home.component';
 import {HeaderComponent} from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {SidebarComponent} from './sidebar/sidebar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 const firebaseConfig = {
@@ -43,7 +45,8 @@ const firebaseConfig = {
     LoginComponent,
     CadastroUsuarioDialogComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ const firebaseConfig = {
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule,
   ],
   providers: [
     FireService

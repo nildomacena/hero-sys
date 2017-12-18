@@ -3,6 +3,7 @@ import { FireService } from '../fire.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CadastroUsuarioDialogComponent } from '../cadastro-usuario-dialog/cadastro-usuario-dialog.component';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  userSubscrition: Subscription;
   email: string = '';
   senha: string = '';
 
@@ -20,7 +21,10 @@ export class LoginComponent implements OnInit {
     public fire: FireService,
     public router: Router
   ){
-
+    this.userSubscrition = this.fire.afAuth.authState.subscribe(user => {
+      if(user)
+        this.router.navigate(['home'])
+    })
   }
 
   ngOnInit() {
