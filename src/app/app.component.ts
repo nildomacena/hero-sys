@@ -2,6 +2,7 @@ import { FireService } from './fire.service';
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CadastroUsuarioDialogComponent } from './cadastro-usuario-dialog/cadastro-usuario-dialog.component';
+import { Router } from '@angular/router';
 
 declare var jQuery: any;
 @Component({
@@ -13,7 +14,8 @@ export class AppComponent {
   
   constructor(
     public dialog: MatDialog,
-    public fire: FireService
+    public fire: FireService,
+    public router: Router
   ){
     jQuery(".button-collapse").sideNav();
   }
@@ -24,6 +26,11 @@ export class AppComponent {
       height: '420px',
       hasBackdrop: false
     })
+  }
+
+  goTo(rota:string){
+    this.router.navigate([rota]);
+    console.log('ir para');
   }
 
 }

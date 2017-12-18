@@ -1,15 +1,23 @@
-<app-header></app-header>
-<ul id="slide-out" class="side-nav fixed" *ngIf="fire.user">
-  <li><img class="icone-sidenav" width="200" src="/assets/images/icon.png"><br></li>
-  <li><a class="subheader">Itens do cardápio</a></li>
-  <li><a href="#!">Consultar</a></li>
-  <li><a href="#!">Inserir novo item</a></li>
-  <li><a class="subheader">Pedidos</a></li>
-  <li><a href="#!">Pedidos Pendentes</a></li>
-  <li><a href="#!">Pedidos concluídos</a></li>
-</ul>
-<a href="#" data-activates="slide-out" class="button-collapse" *ngIf="fire.user"><i class="material-icons">menu</i></a>
-<router-outlet></router-outlet> 
+<header>
+  <app-header></app-header>
+  <ul id="slide-out" class="side-nav fixed" *ngIf="fire.user" style="transform: translateX(0%);">
+    <li><img class="icone-sidenav" width="200" src="/assets/images/icon.png"><br></li>
+    <li><a class="subheader">Itens do cardápio</a></li>
+    <li><a (click)="goTo()" >Consultar</a></li>
+    <li><a (click)="goTo('item-cadastro')" >Inserir novo item</a></li>
+    <li><a class="subheader">Pedidos</a></li>
+    <li><a (click)="goTo()" >Pedidos Pendentes</a></li>
+    <li><a (click)="goTo()" >Pedidos concluídos</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse" *ngIf="fire.user"><i class="material-icons">menu</i></a>
+</header>
+<main>
+  <div class="row">
+    <div class="col s12">
+      <router-outlet></router-outlet> 
+    </div>
+  </div>
+</main>
 <!--
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" opened="true">Sidenav content</mat-sidenav>

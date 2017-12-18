@@ -27,6 +27,7 @@ import {HeaderComponent} from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { ItemCadastroComponent } from './item-cadastro/item-cadastro.component';
 
 
 const firebaseConfig = {
@@ -46,7 +47,8 @@ const firebaseConfig = {
     CadastroUsuarioDialogComponent,
     HomeComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ItemCadastroComponent
   ],
   imports: [
     BrowserModule,
