@@ -3,19 +3,25 @@
     <h4 class="center-align">Cadastro de item</h4>
     <div class="row">
       <div class="input-field col s12">
-        <input id="titulo" type="text" class="validate">
+        <input id="titulo" type="text" class="validate" [(ngModel)]="titulo" [ngModelOptions]="{standalone: true}">
         <label for="titulo">Título</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <textarea id="descricao" class="materialize-textarea"></textarea>
+        <textarea id="descricao" class="materialize-textarea" [(ngModel)]="descricao" [ngModelOptions]="{standalone: true}"></textarea>
         <label for="descricao">Descrição</label>
       </div>
     </div>
+   
+    <select class="browser-default col s12" [(ngModel)]="abaKeySelected" (ngModelChange)="onSelectAba()" [ngModelOptions]="{standalone: true}">
+      <option value="" disabled selected>Selecione a Aba</option>
+      <option [value]="aba.key" *ngFor="let aba of abas">{{aba.descricao}}</option>
+    </select>
+    
     <div class="row">
       <div class="input-field col s12">
-        <input id="preco" type="text" class="validate">
+        <input id="preco" type="number" [(ngModel)]="preco" [ngModelOptions]="{standalone: true}"  class="validate">
         <label for="preco">Preço</label>
       </div>
     </div>
@@ -23,8 +29,34 @@
       <div class="col s12">
         <div class="file-field input-field">
           <div class="btn">
-            <span>File</span>
-            <input type="file" id="input_imagem" #inputImagem (change)="onImagemChange($event)" >
+            <span>Imagem Principal</span>
+            <input type="file" id="input_imagem" #inputImagem (change)="onImagemChange($event, 1)" >
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Imagem 2</span>
+            <input type="file" id="input_imagem" #inputImagem (change)="onImagemChange($event, 2)" >
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Imagem 3</span>
+            <input type="file" id="input_imagem" #inputImagem (change)="onImagemChange($event, 3)" >
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text">
@@ -36,7 +68,7 @@
       <div class="col s4"></div>
     </div>
     <div class="row">
-      <button class="waves-effect waves-light btn col s12 m8 offset-m2 l6 offset-l3">Salvar</button>
+      <button class="waves-effect waves-light btn col s12 m8 offset-m2 l6 offset-l3" (click)="salvar()" >Salvar</button>
     </div>
   </form>
 </div>

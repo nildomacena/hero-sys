@@ -31,12 +31,12 @@ import { ItemCadastroComponent } from './item-cadastro/item-cadastro.component';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDYVGgAz9E6MDasH_mixIkvoHa-7_A9w6U",
-  authDomain: "herobuguer-lanches.firebaseapp.com",
-  databaseURL: "https://herobuguer-lanches.firebaseio.com",
-  projectId: "herobuguer-lanches",
-  storageBucket: "herobuguer-lanches.appspot.com",
-  messagingSenderId: "468183690706"
+  apiKey: "AIzaSyBicF0oeyGcCQ5sr8QvNsjg6qphf0Dmjio",
+  authDomain: "hero-burguer.firebaseapp.com",
+  databaseURL: "https://hero-burguer.firebaseio.com",
+  projectId: "hero-burguer",
+  storageBucket: "hero-burguer.appspot.com",
+  messagingSenderId: "988738797804"
 };
 
 
